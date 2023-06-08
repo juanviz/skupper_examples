@@ -1,0 +1,8 @@
+apiVersion: skupper.io/v1alpha1
+kind: SkupperClusterPolicy
+metadata:
+  name: allowincominglinks
+spec:
+  namespaces:
+    - "*"
+  allowIncomingLinks: true

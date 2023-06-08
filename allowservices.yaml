@@ -1,0 +1,8 @@
+apiVersion: skupper.io/v1alpha1
+kind: SkupperClusterPolicy
+metadata:
+  name: allowedservices
+spec:
+  namespaces:
+    - "*"
+  allowedServices: ['productcatalogservice', 'recommendationservice', 'checkoutservice', 'cartservice', 'currencyservice', 'adservice','redis-cart','emailservice','paymentservice','shippingservice']

@@ -1,0 +1,8 @@
+apiVersion: skupper.io/v1alpha1
+kind: SkupperClusterPolicy
+metadata:
+  name: allowedexposedresources
+spec:
+  namespaces:
+    - "*"
+  allowedExposedResources: ['deployment/productcatalogservice', 'deployment/recommendationservice','deployment/checkoutservice','deployment/cartservice','deployment/currencyservice','deployment/adservice','deployment/redis-cart', 'deployment/emailservice','deployment/paymentservice','deployment/shippingservice']
