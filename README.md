@@ -9,7 +9,7 @@ Tested with 3 Openshift clusters (west,east and east-2)
 ## Execution
 
 *Public west, On Premise East and East-2 Namespace*
-
+```
 $  wget https://raw.githubusercontent.com/skupperproject/skupper/1.0/api/types/crds/skupper_cluster_policy_crd.yaml
 
 
@@ -38,13 +38,14 @@ Current links from other sites that are connected:
 ----------------------------------------
 There are no connected links
 
-
+```
 *Public west*
+```
 $ oc apply -f allowincominglinks.yaml 
 
-
+```
 *On Premise East and East-2 Namespace*
-
+```
 $ oc apply -f allowoutgoinglinks.yaml 
 skupperclusterpolicy.skupper.io/allowedoutgoinglinkshostnames created
 
@@ -55,15 +56,15 @@ Links created from this site:
 -------------------------------
 Link link1 is connected
 
-
+```
 *Public west, On Premise East and East-2 Namespace*
-
+```
 $ oc apply -f ../skupper-policies/allowservices.yaml
 $ oc apply -f skupper-policies/allowedexposedresources.yaml
 
-
+```
 *Public west, On Premise East and East-2 Namespace*
-
+```
 $ kubectl exec deploy/skupper-service-controller -- get policies list
 Defaulted container "service-controller" out of: service-controller, flow-collector
 RULE                          VALUE                            ALLOWED_BY                    
@@ -83,5 +84,5 @@ AllowedServices               adservice                        allowedservices
                               shippingservice                  allowedservices    
 
 
-
+```
 
